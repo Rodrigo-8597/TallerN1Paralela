@@ -22,7 +22,11 @@ void main(){
     var gg = file.openWrite(); //Variable para escribir en el archivo 'respsu.txt' (el de los resultados finales en un archivo)
     jj.write("Rut" + ";" + "nem" + ";" + "ranking" + ";" + "matematicas" + ";" + "lenguaje" + ";" + "ciencias" + ";" + "historia" + ";" + "\n");
     gg.write("Rut" + ";" + "Resultado_psu" + "\n");
-    while (contador < 100){ //El usuario establece el limite de los estudiantes (sujeto a cambios)
+    var limite_reg;
+    print("Ingrese el numero de registros que desee llenar: ");
+    limite_reg = stdin.readLineSync(); //El usuario establece el limite de los estudiantes
+    var num_est = int.parse(limite_reg); //Para que el bucle while se cumpla, hay que transformar la variable en un int
+    while (contador < num_est){
       int valor_nem = random.nextInt(superior - inferior); //Valor aleatorio generado en el campo 'nem'
       int valor_ranking = random.nextInt(superior - inferior); //Valor aleatorio generado en el campo 'ranking'
       int valor_mat = random.nextInt(superior - inferior); //Valor aleatorio generado en la prueba de matematica
