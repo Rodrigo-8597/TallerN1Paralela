@@ -12,8 +12,8 @@ void main(){
     var prueba_hist = [1];
     int superior = 750;         //Esta variable indica el maximo puntaje que puede obtener un estudiante en la psu
     int inferior = 0;           //Despues se explicara porque el puntaje mimino es 0
-    int rut_s = 19932391;     //Representa el rut del estudiante con el mayor numero en su registro (puede que sea el mas joven)
-    int rut_i = 14916641;     //Representa el rut del estudiante con el menor numero en su registro
+    int rut_s = 19932391;     //Representa el rut del estudiante con el mayor numero en su registro (se puede modificar)
+    int rut_i = 14916641;     //Representa el rut del estudiante con el menor numero en su registro (se puede modificar)
     int contador = 0;          //Para el ciclo while, esta variable representara la condicion de termino
     double resultado;             
     Random random = new Random();  //Variable que se utiliza para obtener numeros aleatorios
