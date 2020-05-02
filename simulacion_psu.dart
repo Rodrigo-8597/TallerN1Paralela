@@ -12,7 +12,8 @@ void main(){
     var prueba_hist = [1];
     int superior = 750;         //Esta variable indica el maximo puntaje que puede obtener un estudiante en la psu
     int inferior = 0;           //Despues se explicara porque el puntaje mimino es 0
-    int rut_s = 16787346;     //Representa el rut del estudiante con el mayor numero en su registro (puede que sea el mas joven)
+    int rut_s = 19932391;     //Representa el rut del estudiante con el mayor numero en su registro (puede que sea el mas joven)
+    int rut_i = 14916641;     //Representa el rut del estudiante con el menor numero en su registro
     int contador = 0;          //Para el ciclo while, esta variable representara la condicion de termino
     double resultado;             
     Random random = new Random();  //Variable que se utiliza para obtener numeros aleatorios
@@ -22,11 +23,7 @@ void main(){
     var gg = file.openWrite(); //Variable para escribir en el archivo 'respsu.txt' (el de los resultados finales en un archivo)
     jj.write("Rut" + ";" + "nem" + ";" + "ranking" + ";" + "matematicas" + ";" + "lenguaje" + ";" + "ciencias" + ";" + "historia" + ";" + "\n");
     gg.write("Rut" + ";" + "Resultado_psu" + "\n");
-    var limite_reg;
-    print("Ingrese el numero de registros que desee llenar: ");
-    limite_reg = stdin.readLineSync(); //El usuario establece el limite de los estudiantes
-    var num_est = int.parse(limite_reg); //Para que el bucle while se cumpla, hay que transformar la variable en un int
-    while (contador < num_est){
+    while (rut_i < rut_s){
       int valor_nem = random.nextInt(superior - inferior); //Valor aleatorio generado en el campo 'nem'
       int valor_ranking = random.nextInt(superior - inferior); //Valor aleatorio generado en el campo 'ranking'
       int valor_mat = random.nextInt(superior - inferior); //Valor aleatorio generado en la prueba de matematica
@@ -42,7 +39,7 @@ void main(){
         prueba_cien.add(valor_cien);
         prueba_hist.add(valor_hist);
         contador++;
-        rut_s++;
+        rut_i++;
       }
     }
     int pp = contador + 1; //Aumentamos en 1 la cantidad del contador para realizar las iteraciones de forma adecuada a cada array
